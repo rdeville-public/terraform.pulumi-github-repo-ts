@@ -22,8 +22,9 @@
   "ignorePaths": [
     "CHANGELOG.md",
     "package.json",
-    "yarn.lock",
     "Pulumi.*.yaml",
+    "requirements.dev.*",
+    "yarn.lock",
     "**/snapshots/*.snap",
     "**/snapshots/*.md"
   ],
