@@ -1,0 +1,40 @@
+name: Release
+on:
+  workflow_run:
+    workflows:
+      - Build
+    types:
+      - completed
+    branches:
+      - "main"
+      - "develop"
+      - "next"
+      - "beta"
+      - "alpha"
+
+jobs:
+  release:
+    name: Release
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+      - name: Install dependencies
+        run: yarn install
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: "Deville Romain (bot)"
+          GIT_AUTHOR_EMAIL: "code@romaindeville.fr"
+          GIT_COMMITTER_NAME: "Deville Romain (bot)"
+          GIT_COMMITTER_EMAIL: "code@romaindeville.fr"
+        run: npx semantic-release
