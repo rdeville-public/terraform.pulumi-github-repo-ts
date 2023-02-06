@@ -1,0 +1,86 @@
+{
+  "root": true,
+  "plugins": [
+    "@typescript-eslint",
+    "jsdoc"
+  ],
+  "extends": [
+    "eslint:all",
+    "plugin:@typescript-eslint/all",
+    "plugin:jsdoc/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "rules": {
+    "array-element-newline": [
+      "error",
+      "consistent"
+    ],
+    "capitalized-comments": "off",
+    "function-call-argument-newline": [
+      "error",
+      "consistent"
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "func-style": [
+      "error",
+      "declaration"
+    ],
+    "guard-for-in": "off",
+    "lines-around-comment": "off",
+    "max-statements": [
+      "error",
+      15
+    ],
+    "max-params": [
+      "error",
+      6
+    ],
+    "padded-blocks": [
+      "error",
+      {
+        "blocks": "never",
+        "classes": "always"
+      }
+    ],
+    "one-var": [
+      "error",
+      "never"
+    ],
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/consistent-indexed-object-style": [
+      "error",
+      "index-signature"
+    ],
+    "@typescript-eslint/no-type-alias": [
+      "warn",
+      {
+        "allowAliases": "in-unions",
+        "allowLiterals": "in-unions"
+      }
+    ],
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        }
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "build/**/*"
+  ]
+}

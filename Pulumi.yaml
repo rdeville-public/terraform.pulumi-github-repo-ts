@@ -1,0 +1,3 @@
+name: github-repo
+description: "A pulumi project to manage Github projects, organisation and user."
+runtime: nodejs
