@@ -1,5 +1,6 @@
 import * as github from "@pulumi/github";
 import * as pulumi from "@pulumi/pulumi";
+import type * as repositories from "../repository";
 import * as utils from "../utils";
 import type {
     ProviderConfigArgs
@@ -7,9 +8,9 @@ import type {
 
 export interface IGithubProvider {
     name: string;
-    url: URL;
     username: string;
     provider: github.Provider;
+    repositories: repositories.RepositoriesDict;
 }
 
 /**
@@ -26,9 +27,9 @@ export class GithubProvider extends pulumi.ComponentResource
 
     public username = "";
 
-    public url: URL;
-
     public provider: github.Provider;
+
+    public repositories: repositories.RepositoriesDict = {};
 
     /**
      * Constructor of the ComponentResource GithubProvider
@@ -45,8 +46,6 @@ export class GithubProvider extends pulumi.ComponentResource
     ) {
         super(`github-repo:provider:${name}`, name, args, opts);
         this.name = `${utils.slugify(name)}`;
-        this.url = args.url ?? new URL("https://api.github.com");
-        this.username = args.username;
         this.provider = new github.Provider(
             name,
             args.config,

@@ -12,13 +12,12 @@ export interface ProviderData {
 }
 
 export interface ProviderConfigArgs {
-    username: string;
-    url?: URL;
     config: github.ProviderArgs;
 }
 
 export interface ProviderConfig {
     baseUrl?: string;
+    owner?: string;
     token: ProtectedData;
 }
 

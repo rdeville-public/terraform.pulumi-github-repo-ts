@@ -22,14 +22,9 @@ function createProvider (
     const data: ProviderData = {
         "args": {
             "config": {
-                "baseUrl": currProvider.config.baseUrl,
+                ...currProvider.config,
                 token
-            },
-            "url": new URL(
-                currProvider.config.baseUrl ??
-                    "https://api.github.com/"
-            ),
-            "username": currProvider.username
+            }
         },
         "opts": {
             "aliases": [{"name": providerName}]
