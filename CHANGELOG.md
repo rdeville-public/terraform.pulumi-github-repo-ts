@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## [v0.2.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.1.0...0.2.0) (2023-02-10)
+
+### Minor
+
+  * ✨ Add repository support [`fca8f5c`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/fca8f5c)
+
+### Patch
+
+  * ⬆️ Upgrade @pulumi/github dependency version [`4e39390`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/4e39390)
+
+### Others
+
+  * 🔀 ✨ Add Github repository support with related resources (#4) (Issues:[`#4`](https://github.com/rdeville-public/pulumi.github-repo-ts/issues/4))[`fe19a90`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/fe19a90)
+  * ✅ Add repostiory tests [`16c3d96`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/16c3d96)
+
 ## [v0.1.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.0.0...0.1.0) (2023-02-06)
 
 ### Minor
