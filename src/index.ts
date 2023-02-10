@@ -1,6 +1,11 @@
+import * as organization from "./organization";
 import * as provider from "./provider";
 import * as pulumi from "@pulumi/pulumi";
 import * as repository from "./repository";
+import type {
+    OrganizationPulumiConfig,
+    OrganizationsPulumiInfo
+} from "./organization";
 import type {
     ProvidersDict,
     ProvidersPulumiConfig
@@ -20,6 +25,12 @@ function deploy (): ProvidersDict {
 
     const providers = provider.initProvider(
         config.requireObject<ProvidersPulumiConfig>("githubProviders")
+    );
+
+    organization.initOrganization(
+        providers,
+        config.getObject<OrganizationsPulumiInfo>("githubOrganizations"),
+        config.getObject<OrganizationPulumiConfig>("githubOrganizationConfigs")
     );
 
     repository.initRepository(

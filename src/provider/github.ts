@@ -1,4 +1,5 @@
 import * as github from "@pulumi/github";
+import type * as organization from "../organization";
 import * as pulumi from "@pulumi/pulumi";
 import type * as repositories from "../repository";
 import * as utils from "../utils";
@@ -10,6 +11,7 @@ export interface IGithubProvider {
     name: string;
     username: string;
     provider: github.Provider;
+    organizations: organization.OrganizationsDict;
     repositories: repositories.RepositoriesDict;
 }
 
@@ -28,6 +30,8 @@ export class GithubProvider extends pulumi.ComponentResource
     public username = "";
 
     public provider: github.Provider;
+
+    public organizations: organization.OrganizationsDict = {};
 
     public repositories: repositories.RepositoriesDict = {};
 
