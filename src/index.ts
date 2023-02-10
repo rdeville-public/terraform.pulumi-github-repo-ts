@@ -1,9 +1,14 @@
 import * as provider from "./provider";
 import * as pulumi from "@pulumi/pulumi";
+import * as repository from "./repository";
 import type {
     ProvidersDict,
     ProvidersPulumiConfig
 } from "./provider";
+import type {
+    RepositoriesPulumiInfo,
+    RepositoryPulumiConfig
+} from "./repository";
 
 /**
  * Function to deploy of every resources.
@@ -15,6 +20,12 @@ function deploy (): ProvidersDict {
 
     const providers = provider.initProvider(
         config.requireObject<ProvidersPulumiConfig>("githubProviders")
+    );
+
+    repository.initRepository(
+        providers,
+        config.getObject<RepositoriesPulumiInfo>("githubRepositories"),
+        config.getObject<RepositoryPulumiConfig>("githubRepositoryConfigs")
     );
 
     return providers;

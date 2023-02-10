@@ -12,8 +12,7 @@ test("githubProvider with default baseUrl", (currTest) => {
         "args": {
             "config": {
                 "token": FAKE_TOKEN
-            },
-            "username": "fakeUserName"
+            }
         },
         "opts": {
             "aliases": [{"name": FAKE_ALIAS}]
@@ -34,8 +33,7 @@ test("githubProvider with fake baseUrl", (currTest) => {
             "config": {
                 "baseUrl": FAKE_BASEURL,
                 "token": FAKE_TOKEN
-            },
-            "username": "fakeUserName"
+            }
         },
         "opts": {
             "aliases": [{"name": FAKE_ALIAS}]

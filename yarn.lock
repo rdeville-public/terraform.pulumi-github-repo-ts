@@ -1016,10 +1016,10 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@pulumi/github@^4.9.0":
-  version "4.17.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-4.17.0.tgz#1a4cfd9c2ba5026b2807d7382d85902c54d13765"
-  integrity sha512-znl8MhArmDW1V0Ud3CWAORbTPzEgesKvxOxHMv+0UIeFWx8sGkWwFRNyRzWCUnxx/FxGEh9EzQ71pWqm4lvWTQ==
+"@pulumi/github@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/github/-/github-5.3.0.tgz#6f0746e04988216c5242b7d7a25bf01dbd241351"
+  integrity sha512-TBkgq1Lr5w0v7s3J04qHnOO8OK1swzYqN79PDUdbYva8oyu0MzMB5QOKBszXj4znih2aSlXNDUnSMLLlkAdteQ==
   dependencies:
     "@pulumi/pulumi" "^3.0.0"
 

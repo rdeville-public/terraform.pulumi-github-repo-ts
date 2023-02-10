@@ -4,6 +4,7 @@ fakegroupname
 fakename
 fakeprojectname
 fakeusername
+fakerepositoryname
 FAKEVALUE
 Framagit
 gitmoji
