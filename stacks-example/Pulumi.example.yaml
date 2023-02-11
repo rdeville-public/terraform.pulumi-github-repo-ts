@@ -1,0 +1,256 @@
+encryptionsalt: "SHOULD_BE_GENERATED_WITH_COMMAND 'Pulumi stack init'"
+# This is a "normal" pulumi stack configuration. Not everything is shown below,
+# just some "complex" configuration with multiple providers, groups, projects or
+# user
+config:
+  github-repo:githubMainProvider: "OrgProviderName"
+  github-repo:githubProviders:
+    "ProviderName":
+      config:
+        token: TOKENVALUE
+    "OrgProviderName":
+      config:
+        owner: OrgNameOwner
+        token:
+          cmd: cmd to get value
+  github-repo:githubOrganizationsConfigs:
+    default:
+      # Whether or not advanced security is enabled for new repositories.
+      # Defaults to false.
+      advancedSecurityEnabledForNewRepositories: true
+      # The blog URL for the organization.
+      #blog:
+      # The company name for the organization.
+      #company:
+      # The default permission for organization members to create new
+      # repositories. Can be one of read, write, admin, or none. Defaults to read.
+      defaultRepositoryPermission: read
+      # Whether or not dependabot alerts are enabled for new repositories.
+      # Defaults to false.
+      dependabotAlertsEnabledForNewRepositories: true
+      # Whether or not dependabot security updates are enabled for new
+      # repositories. Defaults to false.
+      dependabotSecurityUpdatesEnabledForNewRepositories: true
+      # Whether or not dependency graph is enabled for new repositories.
+      # Defaults to false.
+      dependencyGraphEnabledForNewRepositories: true
+      # Whether or not organization projects are enabled for the organization.
+      hasOrganizationProjects: false
+      # Whether or not repository projects are enabled for the organization.
+      hasRepositoryProjects: false
+      # The location for the organization.
+      #location:
+      # Whether or not organization members can create new internal repositories.
+      # For Enterprise Organizations only.
+      #membersCanCreateInternalRepositories: false
+      # Whether or not organization members can create new pages. Defaults to true.
+      membersCanCreatePages: false
+      # Whether or not organization members can create new private pages.
+      # Defaults to true.
+      membersCanCreatePrivatePages: false
+      # Whether or not organization members can create new private repositories.
+      # Defaults to true.
+      membersCanCreatePrivateRepositories: false
+      # Whether or not organization members can create new public pages.
+      # Defaults to true.
+      membersCanCreatePublicPages: false
+      # Whether or not organization members can create new public repositories.
+      # Defaults to true.
+      membersCanCreatePublicRepositories: true
+      # Whether or not organization members can create new repositories.
+      # Defaults to true.
+      membersCanCreateRepositories: true
+      # Whether or not organization members can fork private repositories.
+      # Defaults to false.
+      membersCanForkPrivateRepositories: false
+      # Whether or not secret scanning is enabled for new repositories.
+      # Defaults to false.
+      secretScanningEnabledForNewRepositories: true
+      # Whether or not secret scanning push protection is enabled for new
+      # repositories. Defaults to false.
+      secretScanningPushProtectionEnabledForNewRepositories: true
+      # Whether or not commit signatures are required for commits to the
+      # organization. Defaults to false.
+      webCommitSignoffRequired: true
+  github-repo:githubRepositoryConfigs:
+    default:
+      # Set to true to allow auto-merging pull requests on the repository.
+      allowAutoMerge: false
+      # Set to false to disable merge commits on the repository.
+      allowMergeCommit: true
+      # Set to false to disable rebase merges on the repository.
+      allowRebaseMerge: false
+      # Set to false to disable squash merges on the repository.
+      allowSquashMerge: false
+      # Set to true to always suggest updating pull request branches.
+      allowUpdateBranch: true
+      # Set to true to archive the repository instead of deleting on destroy.
+      archiveOnDestroy: true
+      # Specifies if the repository should be archived. Defaults to false.
+      # NOTE Currently, the API does not support unarchiving.
+      archived: false
+      # Set to true to produce an initial commit in the repository.
+      autoInit: true
+      # Automatically delete head branch after a pull request is merged.
+      # Defaults to false.
+      deleteBranchOnMerge: true
+      # Use the name of the template without the extension
+      # gitignoreTemplate string
+      # Set to true to enable GitHub Discussions on the repository.
+      hasDiscussions: false
+      # Set to true to enable the (deprecated) downloads features on the
+      # repository.
+      hasDownloads: false
+      # Set to true to enable the GitHub Issues features on the repository.
+      hasIssues: false
+      # Set to true to enable the GitHub Projects features on the repository.
+      # Per the GitHub documentation when in an organization that has disabled
+      # repository projects it will default to false and will otherwise default
+      # to true. If you specify true when it has been disabled it will return
+      # an error.
+      hasProjects: false
+      # Set to true to enable the GitHub Wiki features on the repository.
+      hasWiki: false
+      # Set to true to not call the vulnerability alerts endpoint so the
+      # resource can also be used without admin permissions during read.
+      ignoreVulnerabilityAlertsDuringRead: false
+      # Set to true to tell GitHub that this is a template repository.
+      isTemplate: false
+      # Use the name of the template without the extension. For example, "mit"
+      # or "mpl-2.0".
+      # licenseTemplate: TODO
+      # Can be PR_BODY, PR_TITLE, or BLANK for a default merge commit message.
+      mergeCommitMessage: PR_BODY
+      # Can be PR_TITLE or MERGE_MESSAGE for a default merge commit title.
+      mergeCommitTitle: PR_TITLE
+      # The repository's GitHub Pages configuration. See GitHub Pages
+      # Configuration below for details.
+      # pages:
+      # The repository's security and analysis configuration. See Security and
+      # Analysis Configuration below for details.
+      # securityAndAnalysis:
+      # Can be PR_BODY, COMMIT_MESSAGES, or BLANK for a default squash merge
+      # commit message.
+      # squashMergeCommitMessage: PR_BODY
+      # Can be PR_TITLE or COMMIT_OR_PR_TITLE for a default squash merge
+      # commit title.
+      # squashMergeCommitTitle: PR_TITLE
+      # Use a template repository to create this resource. See Template
+      # Repositories below for details.
+      # template:
+      # Can be public or private. If your organization is associated with an
+      # enterprise account using GitHub Enterprise Cloud or GitHub Enterprise
+      # Server 2.20+, visibility can also be internal. The visibility parameter
+      # overrides the private parameter.
+      visibility: public
+      # Set to true to enable security alerts for vulnerable dependencies.
+      # Enabling requires alerts to be enabled on the owner level. (Note for
+      # importing: GitHub enables the alerts on public repos but disables them
+      # on private repos by default.) See GitHub Documentation for details.
+      # Note that vulnerability alerts have not been successfully tested on any
+      # GitHub Enterprise instance and may be unavailable in those settings.
+      vulnerabilityAlerts: true
+    mirror:
+      # Set to false to disable merge commits on the repository.
+      allowMergeCommit: false
+      # Set to true to produce an initial commit in the repository.
+      autoInit: false
+      visibility: public
+  github-repo:githubOrganizations:
+    "OrgKeyName":
+      settings:
+        # The billing email address for the organization.
+        # REQUIRED
+        billingEmail: "fakeName@domain.tld"
+        # The description for the organization.
+        description: Org Desecription
+        # The email address for the organization.
+        email: mail@domain.tld
+        # The name for the organization.
+        name: Name of the Org
+        # The Twitter username for the organization.
+        #twitterUsername: TODO
+      branches:
+        "main":
+          # Name of the branch to create
+          "branch": main
+          # Optional boolean to specify if branch is default or not
+          "default": true
+      protectedBranches:
+        "main":
+          # Pattern protection
+          pattern: main
+          # Boolean, setting this to true to allow the branch to be deleted.
+          allowsDeletions: false
+          # Boolean, setting this to true to allow force pushes on the branch.
+
+          allowsForcePushes: false
+          # Boolean, setting this to true to block creating the branch.
+          blocksCreations: false
+          # Boolean, setting this to true enforces status checks for repository
+          # administrators.
+          enforceAdmins: true
+          # Boolean, Setting this to true will make the branch read-only and
+          # preventing any pushes to it. Defaults to false
+          lockBranch: false
+          # Boolean, setting this to true requires all conversations on code
+          # must be resolved before a pull request can be merged.
+          requireConversationResolution: true
+          # Boolean, setting this to true enforces a linear commit Git history,
+          # which prevents anyone from pushing merge commits to a branch
+          requiredLinearHistory: true
+          # Boolean, setting this to true requires all commits to be signed with
+          # GPG.
+          requireSignedCommits: true
+      deployKeys:
+        "keyName":
+          # Title of the deploy key
+          title: Key Title
+          # Value of the SSH deploy key
+          key: Key Value
+      labels:
+        # Name of the issue label
+        "LabelName":
+          # Color of the issue label
+          color: "#00FF00"
+          # Description of the issue label
+          description: Issue label description
+      protectedTags:
+        "version":
+          # Pattern protection
+          pattern: "*.*.*"
+      secrets:
+        # Name of the secret
+        secretName:
+          # Value of the secret
+          encryptedValue: TODO
+          plaintextValue: TODO
+      # Topics of the repo
+      topics:
+        - TODO
+      providers:
+        - "OrgProviderName"
+  github-repo:githubRepositories:
+    "RepoName":
+      # A description of the repository.
+      description: TODO
+      # URL of a page describing the project.
+      homepageUrl: TODO
+      # The list of topics of the repository, must be lowercase !!!
+      topics:
+        - todo
+      # If two provider are specified (like two user and/or one user, one Org),
+      # the repo will be deployed on both without automatic mirror as Github
+      # does not propose such mechanism as Gitlab do. You will have to setup
+      # mirroring yourself using Github CI/CD (or any other CI/CD tool).
+      providers:
+        - "OrgProviderName"
+  github-repo:githubUsers:
+    "rdeville":
+      "ProviderName":
+        sshKeys:
+          "name":
+            "key": "value"
+        gpgKeys:
+          "gpgName":
+            "armoredPublicKey": "value"

@@ -73,10 +73,6 @@ this stack. Multiple example of such stacks are provided in the folder
   * `Pulumi.example_full.yaml`: An example with almost all possible
     configuration entry with comment.
   * `Pulumi.example_minimum.yaml`: A minimalist example without comment.
-  * `Pulumi.example_target.yaml`: (DO NOT USE) This file provide you a full
-    example of what will be the stack configuration once everything will be
-    supported (groups, subgroups, repos, labels, hook, etc., with multiple
-    provider).
 
 Once done, you can deploy your stack (and create your groups and repo) with the
 following command :
