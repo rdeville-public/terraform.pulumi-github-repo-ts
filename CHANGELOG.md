@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [v0.3.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.2.0...0.3.0) (2023-02-11)
+
+### Minor
+
+  * ✨ Add organization management support [`7c90eda`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/7c90eda)
+
+### Others
+
+  * 🔀 ✨ Add Github organization support  (#5) (Issues:[`#5`](https://github.com/rdeville-public/pulumi.github-repo-ts/issues/5))[`36a2717`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/36a2717)
+  * ✅ Add organization tests [`9fcac8c`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/9fcac8c)
+  * 🚨 Fix cspell configuration [`8d1b213`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/8d1b213)
+
 ## [v0.2.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.1.0...0.2.0) (2023-02-10)
 
 ### Minor
