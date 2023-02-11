@@ -2,9 +2,10 @@ commitlint
 Deville
 fakegroupname
 fakename
+fakeorganizationname
 fakeprojectname
-fakeusername
 fakerepositoryname
+fakeusername
 FAKEVALUE
 Framagit
 gitmoji
