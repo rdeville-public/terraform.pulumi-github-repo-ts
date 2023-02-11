@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [v0.4.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.3.0...0.4.0) (2023-02-11)
+
+### Minor
+
+  * ✨ Add User SSH/GPG support [`d42dac5`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/d42dac5)
+
+### Others
+
+  * 🔀 ✨ Add user SSH and GPG support (#7) (Issues:[`#7`](https://github.com/rdeville-public/pulumi.github-repo-ts/issues/7)[`#6`](https://github.com/rdeville-public/pulumi.github-repo-ts/issues/6))[`79173a1`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/79173a1)
+  * ✅ Add user tests [`62fa17b`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/62fa17b)
+  * 🚨 Fix cspell config [`644a6e6`](https://github.com/rdeville-public/pulumi.github-repo-ts/commit/644a6e6)
+
 ## [v0.3.0](https://github.com/rdeville-public/pulumi.github-repo-ts/compare/0.2.0...0.3.0) (2023-02-11)
 
 ### Minor
