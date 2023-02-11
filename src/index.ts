@@ -2,6 +2,7 @@ import * as organization from "./organization";
 import * as provider from "./provider";
 import * as pulumi from "@pulumi/pulumi";
 import * as repository from "./repository";
+import * as user from "./user";
 import type {
     OrganizationPulumiConfig,
     OrganizationsPulumiInfo
@@ -14,6 +15,9 @@ import type {
     RepositoriesPulumiInfo,
     RepositoryPulumiConfig
 } from "./repository";
+import type {
+    UsersPulumiInfo
+} from "./user";
 
 /**
  * Function to deploy of every resources.
@@ -37,6 +41,11 @@ function deploy (): ProvidersDict {
         providers,
         config.getObject<RepositoriesPulumiInfo>("githubRepositories"),
         config.getObject<RepositoryPulumiConfig>("githubRepositoryConfigs")
+    );
+
+    user.initUser(
+        providers,
+        config.getObject<UsersPulumiInfo>("githubUsers")
     );
 
     return providers;

@@ -2,6 +2,7 @@ import * as github from "@pulumi/github";
 import type * as organization from "../organization";
 import * as pulumi from "@pulumi/pulumi";
 import type * as repositories from "../repository";
+import type * as users from "../user";
 import * as utils from "../utils";
 import type {
     ProviderConfigArgs
@@ -13,6 +14,7 @@ export interface IGithubProvider {
     provider: github.Provider;
     organizations: organization.OrganizationsDict;
     repositories: repositories.RepositoriesDict;
+    users: users.UsersDict;
 }
 
 /**
@@ -34,6 +36,8 @@ export class GithubProvider extends pulumi.ComponentResource
     public organizations: organization.OrganizationsDict = {};
 
     public repositories: repositories.RepositoriesDict = {};
+
+    public users: users.UsersDict = {};
 
     /**
      * Constructor of the ComponentResource GithubProvider
