@@ -1,0 +1,130 @@
+encryptionsalt: "SHOULD_BE_GENERATED_WITH_COMMAND 'Pulumi stack init'"
+# This file show you an almost full configuration useing most of the possible
+# values
+config:
+  github-repo:githubMainProvider: "Provider Name"
+  github-repo:githubProviders:
+    "Provider Name":
+      token: abcdefghijklmno
+    "Another Provider":
+      owner: orgName
+      token:
+        env: ENV_VARIABLE_NAME
+  github-repo:githubOrganizationsConfigs:
+    default:
+      advancedSecurityEnabledForNewRepositories: true
+      #company:
+      defaultRepositoryPermission: read
+      dependabotAlertsEnabledForNewRepositories: true
+      dependabotSecurityUpdatesEnabledForNewRepositories: true
+      dependencyGraphEnabledForNewRepositories: true
+      hasOrganizationProjects: false
+      hasRepositoryProjects: false
+      #location:
+      #membersCanCreateInternalRepositories: false
+      membersCanCreatePages: false
+      membersCanCreatePrivatePages: false
+      membersCanCreatePrivateRepositories: false
+      membersCanCreatePublicPages: false
+      membersCanCreatePublicRepositories: true
+      membersCanCreateRepositories: true
+      membersCanForkPrivateRepositories: false
+      secretScanningEnabledForNewRepositories: true
+      secretScanningPushProtectionEnabledForNewRepositories: true
+      webCommitSignoffRequired: true
+  github-repo:githubRepositoryConfigs:
+    default:
+      allowAutoMerge: false
+      allowMergeCommit: true
+      allowRebaseMerge: false
+      allowSquashMerge: false
+      allowUpdateBranch: true
+      archiveOnDestroy: true
+      archived: false
+      autoInit: true
+      deleteBranchOnMerge: true
+      hasDiscussions: false
+      hasDownloads: false
+      hasIssues: false
+      hasProjects: false
+      hasWiki: false
+      ignoreVulnerabilityAlertsDuringRead: false
+      isTemplate: false
+      # licenseTemplate: TODO
+      mergeCommitMessage: PR_BODY
+      mergeCommitTitle: PR_TITLE
+      # pages:
+      # securityAndAnalysis:
+      # squashMergeCommitMessage: PR_BODY
+      # squashMergeCommitTitle: PR_TITLE
+      # template:
+      visibility: public
+      vulnerabilityAlerts: true
+    mirror:
+      allowMergeCommit: false
+      autoInit: false
+      visibility: public
+  github-repo:githubOrganizations:
+    "Organization Name":
+      settings:
+        billingEmail: "accounts@romaindeville.fr"
+        description: "Organization description"
+        email: TODO
+        name: Organization Name
+        #twitterUsername: TODO
+      providers:
+        - "Another Provider"
+  github-repo:githubRepositories:
+    "Repo Name":
+      description: TODO
+      homepageUrl: TODO
+      branches:
+        "main":
+          "branch": main
+          "default": true
+      protectedBranches:
+        "main":
+          pattern: main
+          allowsDeletions: false
+          allowsForcePushes: false
+          blocksCreations: false
+          enforceAdmins: true
+          lockBranch: false
+          requireConversationResolution: true
+          requireSignedCommits: true
+          requiredLinearHistory: true
+      deployKeys:
+        "keyName":
+          title: Key Title
+          key: Key Value
+      labels:
+        "LabelName":
+          color: "#00FF00"
+          description: Issue label description
+      protectedTags:
+        "version":
+          pattern: "*.*.*"
+      secrets:
+        secretName:
+          encryptedValue: TODO
+          plaintextValue: TODO
+      topics:
+        - todo
+      providers:
+        - "Provider Name"
+    "Pulumi.another.test":
+      description: TODO
+      homepageUrl: TODO
+      topics:
+        - todo
+      providers:
+        - "Another Provider"
+  github-repo:githubUsers:
+    "rdeville":
+      github.com-rdeville:
+        sshKeys:
+          "name":
+            "key": "value"
+        gpgKeys:
+          "gpgName":
+            "armoredPublicKey": "value"

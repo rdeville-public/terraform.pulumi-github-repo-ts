@@ -1,0 +1,34 @@
+encryptionsalt: "SHOULD_BE_GENERATED_WITH_COMMAND 'Pulumi stack init'"
+# This stack show you a minimum configuration to create a single organization with a
+# single repo on a single github instance. It also show you how to manage user
+# keys (SSH & GPG).
+config:
+  git-repo:githubMainProvider: "Provider Name"
+  git-repo:githubProviders:
+    "Provider Name":
+      config:
+        # This key could be added with either `cmd:` or `env:` subkeys or using
+        # `pulumi config secret` command
+        token: abcdefghijklmno
+  git-repo:githubOrganizations:
+    "Organization Name":
+      settings:
+        # The billing email address for the organization.
+        # REQUIRED
+        billingEmail: "accounts@romaindeville.fr"
+  git-repo:githubRepositories:
+    "Repository Name":
+      description: My Test organization descrpition
+      providers:
+        - "Provider Name"
+  git-repo:githubUsers:
+    "User Name":
+      providers:
+        # Required if key "user" is used
+        "Provider Name":
+          sshKeys:
+            sshKeyName:
+              key: "Public SSH key content"
+          gpgKeys:
+            gpgKeyName:
+              armoredPublicKey: "Public GPG signature key content"
