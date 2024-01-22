@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-yarn install
+# yarn install
 if ! command -v pre-commit
 then
   echo "ERROR-Command pre-commit is not installed"
